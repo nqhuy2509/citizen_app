@@ -1,0 +1,18 @@
+{
+    "welcome": "Welcome to CitiZen!",
+    "subWelcome":"CitiZen is a platform for citizens to share their ideas and opinions with the government.",
+    "letsStart":"Let's started!",
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account?",
+    "register": "Register",
+    "emailRequired":"Please enter your email address",
+    "invalidEmail": "Please enter a valid email address",
+    "verifyEmail": "Verify Email",
+
+    "resend": "Resend"
+
+
+}

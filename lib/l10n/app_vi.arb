@@ -1,0 +1,14 @@
+{
+    "welcome": "Chào bạn đến với CitiZen!",
+    "subWelcome":"CitiZen là một nền tảng xã hội cho phép người dùng chia sẻ những điều họ thích và tìm kiếm những người bạn có sở thích giống nhau.",
+    "letsStart":"Bắt đầu!",
+    "login":"Đăng nhập",
+    "email":"Email",
+    "password":"Mật khẩu",
+    "forgotPassword":"Quên mật khẩu?",
+    "dontHaveAccount":"Bạn chưa có tài khoản?",
+    "register":"Đăng ký",
+    "emailRequired":"Vui lòng nhập email",
+    "invalidEmail": "Email không hợp lệ",
+    "verifyEmail": "Xác thưc Email"
+}
