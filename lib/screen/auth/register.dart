@@ -1,4 +1,8 @@
+import 'package:citi_zen_app/screen/auth/login.dart';
+import 'package:citi_zen_app/screen/auth/verification.dart';
+import 'package:citi_zen_app/utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -27,7 +31,7 @@ class _RegisterState extends State<Register> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Text(
-                "Register",
+                AppLocalizations.of(context)!.register,
                 style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -35,11 +39,10 @@ class _RegisterState extends State<Register> {
               ),
               const SizedBox(height: 20),
               TextFormField(
-                maxLength: 50,
                 keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.email),
-                  labelText: "Email",
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.email),
+                  labelText: AppLocalizations.of(context)!.email,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -57,11 +60,10 @@ class _RegisterState extends State<Register> {
               ),
               const SizedBox(height: 20),
               TextFormField(
-                maxLength: 50,
                 keyboardType: TextInputType.name,
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.person),
-                  labelText: "Username",
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.person),
+                  labelText: AppLocalizations.of(context)!.nationalId,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -73,13 +75,14 @@ class _RegisterState extends State<Register> {
                   _enterdUsername = value!;
                 },
               ),
+              const SizedBox(height: 20),
               TextFormField(
                 obscureText: _obscureText,
                 decoration: InputDecoration(
                   prefixIcon: const Icon(
                     Icons.lock,
                   ),
-                  labelText: "Password",
+                  labelText: AppLocalizations.of(context)!.password,
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -111,7 +114,7 @@ class _RegisterState extends State<Register> {
                   prefixIcon: const Icon(
                     Icons.lock,
                   ),
-                  labelText: "Confirm Password",
+                  labelText: AppLocalizations.of(context)!.confirmPassword,
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -137,18 +140,28 @@ class _RegisterState extends State<Register> {
                 },
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 10,
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Routes.instance.push(
+                        widget: Verification(
+                          email: _enteredEmail,
+                        ),
+                        context: context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    backgroundColor: Theme.of(context).primaryColor,
                   ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+                  child: Text(
+                    AppLocalizations.of(context)!.register,
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ),
-                child: const Text("Register"),
               ),
               const SizedBox(height: 20),
               Row(
@@ -157,7 +170,8 @@ class _RegisterState extends State<Register> {
                   const Text("Already have an account?"),
                   TextButton(
                     onPressed: () {
-                      Navigator.of(context).pop();
+                      Routes.instance.pushAndRemoveUtil(
+                          widget: const Login(), context: context);
                     },
                     child: const Text("Login"),
                   ),

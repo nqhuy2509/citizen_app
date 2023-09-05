@@ -1,3 +1,5 @@
+import 'package:citi_zen_app/screen/auth/register.dart';
+import 'package:citi_zen_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -107,7 +109,10 @@ class _LoginState extends State<Login> {
                     children: [
                       Text(AppLocalizations.of(context)!.dontHaveAccount),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Routes.instance.pushAndRemoveUtil(
+                              widget: const Register(), context: context);
+                        },
                         child: Text(
                           AppLocalizations.of(context)!.register,
                           style: const TextStyle(fontSize: 16),

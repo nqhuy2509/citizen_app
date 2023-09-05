@@ -1,6 +1,7 @@
 {
+    "@@locale": "vi",
     "welcome": "Chào bạn đến với CitiZen!",
-    "subWelcome":"CitiZen là một nền tảng xã hội cho phép người dùng chia sẻ những điều họ thích và tìm kiếm những người bạn có sở thích giống nhau.",
+    "subWelcome":"Cùng nhau xây dựng một thế giới tốt đẹp hơn",
     "letsStart":"Bắt đầu!",
     "login":"Đăng nhập",
     "email":"Email",
@@ -10,5 +11,15 @@
     "register":"Đăng ký",
     "emailRequired":"Vui lòng nhập email",
     "invalidEmail": "Email không hợp lệ",
-    "verifyEmail": "Xác thưc Email"
+    "verifyEmail": "Xác thưc Email",
+    "nationalId": "Số CMND/CCCD/Hộ chiếu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "verifyEmail": "Xác thực Email",
+    "verificationEmailMessage1": "Email đã được gửi đến",
+    "verificationEmailMessage2": ". Vui lòng kiểm tra và xác thực email để tiếp tục đăng ký tài khoản",
+    "verify": "Xác thực",
+    "home": "Trang chủ",
+    "recept": "Hóa đơn",
+    "notification": "Thông báo",
+    "profile": "Tài khoản"
 }

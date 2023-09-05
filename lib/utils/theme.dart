@@ -11,4 +11,10 @@ ThemeData themeData = ThemeData(
     suffixIconColor: primaryColor,
     prefixIconColor: primaryColor,
   ),
+  appBarTheme: const AppBarTheme(
+    color: Colors.white,
+    elevation: 0,
+    iconTheme: IconThemeData(color: primaryColor),
+    titleTextStyle: TextStyle(color: primaryColor, fontSize: 20),
+  ),
 );
