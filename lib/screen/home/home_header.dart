@@ -62,9 +62,13 @@ class HomeHeader extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        SvgPicture.asset("assets/icons/point-icon.svg"),
+                        Image.asset(
+                          "assets/icons/ci-point-icon.png",
+                          width: 20,
+                          height: 20,
+                        ),
                         const SizedBox(width: 5),
-                        Text(
+                        const Text(
                           "123",
                           style: TextStyle(
                             fontSize: 16,
