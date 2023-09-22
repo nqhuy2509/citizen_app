@@ -1,5 +1,5 @@
 import 'package:citi_zen_app/provider/language_provider.dart';
-import 'package:citi_zen_app/screen/auth/login.dart';
+import 'package:citi_zen_app/screen/auth/login/login.dart';
 import 'package:citi_zen_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
