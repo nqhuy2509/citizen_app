@@ -14,7 +14,7 @@
     "verifyEmail": "Verify Email",
     "nationalId": "Citizen ID/Passport",
     "confirmPassword": "Confirm Password",
-    "verifyEmail": "Verify Email",
+    "invalidPassword": "Password must be at least 8 characters long",
     "verificationEmailMessage1": "An email has been sent to",
     "verificationEmailMessage2": ". Please check and verify your email to continue registering for an account",
     "verify": "Verify",

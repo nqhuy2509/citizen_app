@@ -1,6 +1,5 @@
-import 'package:citi_zen_app/provider/language_provider.dart';
-import 'package:citi_zen_app/screen/auth/login/login.dart';
-import 'package:citi_zen_app/utils/routes.dart';
+import 'package:citizen_app/provider/language_provider.dart';
+import 'package:citizen_app/screen/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +7,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
+
+  static String routeName = '/welcome';
 
   @override
   State<Welcome> createState() => _WelcomeState();
@@ -52,8 +53,7 @@ class _WelcomeState extends State<Welcome> {
             const SizedBox(height: 30),
             TextButton.icon(
               onPressed: () {
-                Routes.instance
-                    .pushAndRemoveUtil(widget: const Login(), context: context);
+                Navigator.pushNamed(context, Login.routeName);
               },
               icon: const Icon(Icons.arrow_right_alt),
               label: Text(

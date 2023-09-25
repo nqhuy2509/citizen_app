@@ -1,4 +1,4 @@
-import 'package:citi_zen_app/constants/constant.dart';
+import 'package:citizen_app/constants/constant.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SecureStorageUtils{

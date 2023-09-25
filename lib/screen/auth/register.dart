@@ -1,11 +1,12 @@
-import 'package:citi_zen_app/screen/auth/login/login.dart';
-import 'package:citi_zen_app/screen/auth/verification.dart';
-import 'package:citi_zen_app/utils/routes.dart';
+
+import 'package:citizen_app/screen/auth/verification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
+
+  static String routeName = '/register';
 
   @override
   State<Register> createState() => _RegisterState();
@@ -144,11 +145,7 @@ class _RegisterState extends State<Register> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Routes.instance.push(
-                        widget: Verification(
-                          email: _enteredEmail,
-                        ),
-                        context: context);
+                    Navigator.pushNamed(context, Verification.routeName);
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 15),
@@ -170,8 +167,7 @@ class _RegisterState extends State<Register> {
                   const Text("Already have an account?"),
                   TextButton(
                     onPressed: () {
-                      Routes.instance.pushAndRemoveUtil(
-                          widget: const Login(), context: context);
+                      Navigator.pop(context);
                     },
                     child: const Text("Login"),
                   ),

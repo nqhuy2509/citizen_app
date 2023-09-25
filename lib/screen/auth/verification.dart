@@ -1,11 +1,12 @@
-import 'package:citi_zen_app/screen/home/home.dart';
-import 'package:citi_zen_app/utils/routes.dart';
+import 'package:citizen_app/screen/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class Verification extends StatefulWidget {
   const Verification({super.key, required this.email});
+
+  static String routeName = '/verification';
 
   final String email;
 
@@ -65,8 +66,7 @@ class _VerificationState extends State<Verification> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Routes.instance
-                    .pushAndRemoveUtil(widget: Home(), context: context);
+                Navigator.pushNamed(context, Home.routeName);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor,

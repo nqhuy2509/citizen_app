@@ -14,7 +14,7 @@
     "verifyEmail": "Xác thưc Email",
     "nationalId": "Số CMND/CCCD/Hộ chiếu",
     "confirmPassword": "Xác nhận mật khẩu",
-    "verifyEmail": "Xác thực Email",
+    "invalidPassword": "Vui lòng nhập ít nhất 6 ksý tự",
     "verificationEmailMessage1": "Email đã được gửi đến",
     "verificationEmailMessage2": ". Vui lòng kiểm tra và xác thực email để tiếp tục đăng ký tài khoản",
     "verify": "Xác thực",

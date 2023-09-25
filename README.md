@@ -1,4 +1,4 @@
-# citi_zen_app
+# citizen_app
 
 A new Flutter project.
 

@@ -1,4 +1,4 @@
-package com.example.citi_zen_app
+package com.example.citizen_app
 
 import io.flutter.embedding.android.FlutterActivity
 

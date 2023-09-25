@@ -1,6 +1,7 @@
-import 'package:citi_zen_app/provider/language_provider.dart';
-import 'package:citi_zen_app/screen/auth/welcome.dart';
-import 'package:citi_zen_app/utils/theme.dart';
+import 'package:citizen_app/constants/routes.dart';
+import 'package:citizen_app/provider/language_provider.dart';
+import 'package:citizen_app/screen/splash/splash.dart';
+import 'package:citizen_app/utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'CitiZen',
       theme: themeData,
-      home: const Welcome(),
+      routes: routes,
+      initialRoute: Splash.routeName,
     );
   }
 }

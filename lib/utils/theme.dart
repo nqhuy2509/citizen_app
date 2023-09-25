@@ -1,5 +1,9 @@
-import 'package:citi_zen_app/constants/color.dart';
+
 import 'package:flutter/material.dart';
+
+
+const Color primaryColor = Color(0xFF00BCD4);
+
 
 ThemeData themeData = ThemeData(
   scaffoldBackgroundColor: Colors.white,
