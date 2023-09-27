@@ -1,5 +1,6 @@
+import 'package:citizen_app/enums/error_message.dart';
 import 'package:citizen_app/repository/auth_repository.dart';
-import 'package:citizen_app/screen/auth/register.dart';
+import 'package:citizen_app/screen/register/register.dart';
 import 'package:citizen_app/screen/login/bloc/login_bloc.dart';
 import 'package:citizen_app/screen/login/submission_status.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,11 @@ class _LoginState extends State<Login> {
 
   final LoginBloc _loginBloc = LoginBloc(authRepository: AuthRepository());
 
+  final FocusNode _emailFocusNode = FocusNode();
+  final FocusNode _passwordFocusNode = FocusNode();
+
+  bool _isProcessLogin = false;
+
   @override
   void dispose() {
     _loginFormKey.currentState?.dispose();
@@ -30,32 +36,77 @@ class _LoginState extends State<Login> {
     super.dispose();
   }
 
+  void _showSnackBarMessage(BuildContext context, message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: Colors.red,
+        duration: const Duration(seconds: 3),
+      ),
+    );
+  }
+
+  void handleSubmitLogin(BuildContext context, LoginState state) {
+    FocusScope.of(context).unfocus();
+    if (_loginFormKey.currentState!.validate()) {
+      setState(() {
+        _isProcessLogin = true;
+      });
+      context
+          .read<LoginBloc>()
+          .add(LoginSubmitted(email: state.email, password: state.password));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => _loginBloc,
       child: Scaffold(
-        body: Padding(
-            padding: const EdgeInsets.all(12),
-            child: BlocListener<LoginBloc, LoginState>(
-              listener: (context, state) {
-                if (state.submissionStatus is SubmissionSuccess) {
-                  Navigator.pushNamed(context, '/home');
+        body: GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+          },
+          child: BlocListener<LoginBloc, LoginState>(
+            listener: (context, state) {
+              if (_isProcessLogin) {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              }
+              if (state.submissionStatus is SubmissionSuccess) {
+                Navigator.pushNamed(context, '/home');
+              } else if (state.submissionStatus is SubmissionFailure) {
+                final error = state.submissionStatus as SubmissionFailure;
+                final errorString = error.exception.toString();
+                String errorMessage;
+                if (errorString == ErrorMessage.invalidCredential.toString()) {
+                  errorMessage =
+                      AppLocalizations.of(context)!.invalidCredentials;
+                } else {
+                  errorMessage =
+                      AppLocalizations.of(context)!.somethingWentWrong;
                 }
-                if (state.submissionStatus is SubmissionFailure) {
-                  final error = state.submissionStatus as SubmissionFailure;
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(error.toString()),
-                      backgroundColor: Colors.red,
-                    ),
-                  );
 
-                  context.read<LoginBloc>().add(LoginReset());
-                }
-              },
-              child: _loginForm(),
-            )),
+                _showSnackBarMessage(context, errorMessage);
+                setState(() {
+                  _isProcessLogin = false;
+                });
+              }
+            },
+            child: Stack(children: [
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: _loginForm(),
+              ),
+              if (_isProcessLogin)
+                Container(
+                  color: Colors.black12,
+                  child: const Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ),
+            ]),
+          ),
+        ),
       ),
     );
   }
@@ -118,13 +169,15 @@ class _LoginState extends State<Login> {
 
   Widget _emailEditField() {
     return BlocBuilder<LoginBloc, LoginState>(
+      bloc: _loginBloc,
       builder: (context, state) => TextFormField(
-        maxLength: 50,
+        autofocus: true,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
           prefixIcon: const Icon(Icons.email),
           labelText: AppLocalizations.of(context)!.email,
         ),
+        textInputAction: TextInputAction.next,
         validator: (value) {
           if (value == null || value.trim().isEmpty) {
             return AppLocalizations.of(context)!.emailRequired;
@@ -137,14 +190,18 @@ class _LoginState extends State<Login> {
         onChanged: (value) {
           context.read<LoginBloc>().add(LoginEmailChanged(email: value));
         },
+        onEditingComplete: () {
+          FocusScope.of(context).nextFocus();
+        },
       ),
     );
   }
 
   Widget _passwordEditField() {
     return BlocBuilder<LoginBloc, LoginState>(
+      bloc: _loginBloc,
       builder: (context, state) => TextFormField(
-        obscureText: true,
+        obscureText: _obscureText,
         decoration: InputDecoration(
           prefixIcon: const Icon(
             Icons.lock,
@@ -170,18 +227,20 @@ class _LoginState extends State<Login> {
         onChanged: (value) {
           context.read<LoginBloc>().add(LoginPasswordChanged(password: value));
         },
+        onFieldSubmitted: (_) {
+          handleSubmitLogin(context, state);
+          _passwordFocusNode.unfocus();
+        },
       ),
     );
   }
 
   Widget _loginButton() {
     return BlocBuilder<LoginBloc, LoginState>(
+      bloc: _loginBloc,
       builder: (context, state) => ElevatedButton(
         onPressed: () {
-          if (_loginFormKey.currentState!.validate()) {
-            context.read<LoginBloc>().add(
-                LoginSubmitted(email: state.email, password: state.password));
-          }
+          handleSubmitLogin(context, state);
         },
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 15),

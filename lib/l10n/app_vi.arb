@@ -21,5 +21,8 @@
     "home": "Trang chủ",
     "recept": "Hóa đơn",
     "notification": "Thông báo",
-    "profile": "Tài khoản"
+    "profile": "Tài khoản",
+    "invalidCredentials": "Email hoặc mật khẩu không đúng",
+    "somethingWentWrong": "Có lỗi xảy ra. Vui lòng thử lại sau",
+    "alreadyHaveAccount": "Bạn đã có tài khoản?"
 }

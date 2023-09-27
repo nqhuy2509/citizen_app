@@ -1,6 +1,6 @@
 part of 'login_bloc.dart';
 
-class LoginState {
+class   LoginState {
   final String email;
   bool get isValidEmail => RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
       .hasMatch(email);
@@ -10,14 +10,7 @@ class LoginState {
 
   final SubmissionStatus submissionStatus;
 
-  LoginState({required this.email, required this.password, this.submissionStatus = const SubmissionInitial()});
-
-  factory LoginState.initial(){
-    return LoginState(
-      email: '',
-      password: ''
-    );
-  }
+  LoginState({ this.email ='', this.password ='', this.submissionStatus = const SubmissionInitial()});
 
   LoginState copyWith({String? email, String? password, SubmissionStatus? submissionStatus}){
     return LoginState(

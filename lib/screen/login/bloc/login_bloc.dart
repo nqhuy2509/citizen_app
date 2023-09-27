@@ -1,8 +1,9 @@
 import 'package:bloc/bloc.dart';
+import 'package:citizen_app/enums/error_message.dart';
 import 'package:citizen_app/screen/login/submission_status.dart';
 import 'package:citizen_app/utils/secure_storage.dart';
-import 'package:flutter/material.dart';
 import 'package:citizen_app/repository/auth_repository.dart';
+import 'package:dio/dio.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
@@ -10,10 +11,11 @@ part 'login_state.dart';
 class LoginBloc extends Bloc<LoginEvent, LoginState>{
   final AuthRepository authRepository;
 
-  LoginBloc({required this.authRepository}) : super(LoginState.initial()){
+  LoginBloc({required this.authRepository}) : super(LoginState()){
     on<LoginEmailChanged>(_emailChangeEvent);
     on<LoginPasswordChanged>(_passwordChangeEvent);
     on<LoginSubmitted>(_loginSubmittedEvent);
+    on<LoginReset>(_loginReset);
 
   }
 
@@ -37,11 +39,19 @@ class LoginBloc extends Bloc<LoginEvent, LoginState>{
         emit(state.copyWith(submissionStatus: SubmissionFailure(Exception('Login failed'))));
       }
     } catch (e) {
-      emit(state.copyWith(submissionStatus: SubmissionFailure(e as Exception)));
+      if(e is DioException){
+        if(e.response?.statusCode == 400){
+          emit(state.copyWith(submissionStatus: SubmissionFailure(Exception(ErrorMessage.invalidCredential))));
+        }else{
+          emit(state.copyWith(submissionStatus: SubmissionFailure(Exception(ErrorMessage.somethingWentWrong))));
+        }
+      }else{
+        emit(state.copyWith(submissionStatus: SubmissionFailure(Exception(ErrorMessage.invalidCredential))));
+      }
     }
   }
 
   void _loginReset(LoginReset event, Emitter<LoginState> emit) {
-    emit(LoginState.initial());
+    emit(LoginState());
   }
 }

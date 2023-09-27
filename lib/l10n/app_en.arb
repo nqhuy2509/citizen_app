@@ -21,5 +21,8 @@
     "home": "Home",
     "receipt": "Receipt",
     "notification": "Notification",
-    "profile": "Profile"
+    "profile": "Profile",
+    "invalidCredentials": "Email or password is incorrect",
+    "somethingWentWrong": "Something went wrong. Please try again later",
+    "alreadyHaveAccount": "Already have an account?"
 }

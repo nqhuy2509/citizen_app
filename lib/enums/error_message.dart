@@ -1,0 +1,4 @@
+enum ErrorMessage {
+  invalidCredential,
+  somethingWentWrong,
+}

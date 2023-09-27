@@ -1,6 +1,7 @@
 import 'package:citizen_app/enums/menu.dart';
 import 'package:citizen_app/screen/home/home_header.dart';
 import 'package:citizen_app/widgets/custom_bottom_navbar.dart';
+import 'package:citizen_app/widgets/custom_floating_action_button.dart';
 import 'package:flutter/material.dart';
 
 import 'home_body.dart';
@@ -9,15 +10,10 @@ class Home extends StatelessWidget {
   const Home({super.key});
 
   static String routeName = '/home';
-
-  bool keyboardIsVisible(BuildContext context) {
-    return !(MediaQuery.of(context).viewInsets.bottom == 0.0);
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const SafeArea(
+    return const Scaffold(
+      body: SafeArea(
         child: Column(
           children: [
             HomeHeader(),
@@ -28,17 +24,10 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: Visibility(
-        visible: !keyboardIsVisible(context),
-        child: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Theme.of(context).primaryColor,
-          child: const Icon(Icons.qr_code_scanner),
-        ),
-      ),
+      floatingActionButton: CustomFloatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar:
-          const CustomBottomNavBar(selectedMenu: MenuState.home),
+          CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 }

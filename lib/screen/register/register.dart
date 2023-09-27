@@ -164,7 +164,9 @@ class _RegisterState extends State<Register> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Already have an account?"),
+                  Text(
+                      AppLocalizations.of(context)!.invalidCredentials,
+                  ),
                   TextButton(
                     onPressed: () {
                       Navigator.pop(context);
