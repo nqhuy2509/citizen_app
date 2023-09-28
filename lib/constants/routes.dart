@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 final Map<String,WidgetBuilder> routes = {
   Welcome.routeName: (context) => const Welcome(),
-  Login.routeName: (context) => const Login(),
+  Login.routeName: (context) => Login(),
   Register.routeName: (context) => const Register(),
   Home.routeName: (context) => const Home(),
   Splash.routeName: (context) => const Splash(),
