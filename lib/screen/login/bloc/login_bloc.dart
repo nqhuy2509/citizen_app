@@ -1,9 +1,9 @@
-import 'package:bloc/bloc.dart';
 import 'package:citizen_app/enums/error_message.dart';
-import 'package:citizen_app/screen/login/submission_status.dart';
+import 'package:citizen_app/enums/submission_status.dart';
 import 'package:citizen_app/utils/secure_storage.dart';
 import 'package:citizen_app/repository/auth_repository.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
