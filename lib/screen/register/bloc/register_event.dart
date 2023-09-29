@@ -21,17 +21,19 @@ class RegisterConfirmPasswordChanged extends RegisterEvent {
   RegisterConfirmPasswordChanged({required this.confirmPassword});
 }
 
-class RegisterCitizenIdChanged extends RegisterEvent {
-  final String citizenId;
+class RegisterNationalIdChanged extends RegisterEvent {
+  final String nationalId;
 
-  RegisterCitizenIdChanged({required this.citizenId});
+  RegisterNationalIdChanged({required this.nationalId});
 }
 
 class RegisterSubmitted extends RegisterEvent {
   final String email;
   final String password;
-  final String citizenId;
+  final String nationalId;
 
   RegisterSubmitted(
-      {required this.email, required this.password, required this.citizenId});
+      {required this.email, required this.password, required this.nationalId});
 }
+
+class RegisterReset extends RegisterEvent {}

@@ -57,8 +57,8 @@ class RequestApi {
     try {
       final response = await _dio.get(path, queryParameters: params);
       return response.data;
-    } on DioError catch (e) {
-      throw e;
+    } on DioError {
+      rethrow;
     }
   }
 
@@ -67,8 +67,8 @@ class RequestApi {
     try {
       final response = await _dio.post(path, data: data);
       return response.data;
-    } on DioError catch (e) {
-      throw e;
+    } on DioError {
+      rethrow;
     }
   }
 
@@ -77,8 +77,8 @@ class RequestApi {
     try {
       final response = await _dio.put(path, data: params);
       return response.data;
-    } on DioError catch (e) {
-      throw e;
+    } on DioError {
+      rethrow;
     }
   }
 
@@ -87,8 +87,8 @@ class RequestApi {
     try {
       final response = await _dio.delete(path, queryParameters: params);
       return response.data;
-    } on DioError catch (e) {
-      throw e;
+    } on DioError {
+      rethrow;
     }
   }
 

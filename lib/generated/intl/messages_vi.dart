@@ -29,21 +29,33 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Bạn chưa có tài khoản?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailAlreadyExists":
+            MessageLookupByLibrary.simpleMessage("Email đã tồn tại"),
         "emailRequired":
             MessageLookupByLibrary.simpleMessage("Vui lòng nhập email"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "invalidConfirmPassword": MessageLookupByLibrary.simpleMessage(
+            "Mật khẩu xác nhận không khớp"),
         "invalidCredentials": MessageLookupByLibrary.simpleMessage(
             "Email hoặc mật khẩu không đúng"),
         "invalidEmail":
             MessageLookupByLibrary.simpleMessage("Email không hợp lệ"),
+        "invalidNationalId": MessageLookupByLibrary.simpleMessage(
+            "Số CMND/CCCD/Hộ chiếu không hợp lệ"),
         "invalidPassword": MessageLookupByLibrary.simpleMessage(
             "Vui lòng nhập ít nhất 6 ksý tự"),
         "letsStart": MessageLookupByLibrary.simpleMessage("Bắt đầu!"),
         "login": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
         "nationalId":
             MessageLookupByLibrary.simpleMessage("Số CMND/CCCD/Hộ chiếu"),
+        "nationalIdAlreadyExists": MessageLookupByLibrary.simpleMessage(
+            "Số CMND/CCCD/Hộ chiếu đã được đăng kí"),
+        "nationalIdNotFound": MessageLookupByLibrary.simpleMessage(
+            "Không tìm thấy số CMND/CCCD/Hộ chiếu trong dữ liệu"),
+        "nationalIdRequired": MessageLookupByLibrary.simpleMessage(
+            "Vui lòng nhập số CMND/CCCD/Hộ chiếu"),
         "notification": MessageLookupByLibrary.simpleMessage("Thông báo"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
         "profile": MessageLookupByLibrary.simpleMessage("Tài khoản"),

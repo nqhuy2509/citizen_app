@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
@@ -94,17 +93,17 @@ class HomeHeader extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Row(
+            child: const Row(
               children: [
                 Expanded(
                   child: TextField(
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       hintText: "Search",
                       border: InputBorder.none,
                     ),
                   ),
                 ),
-                const Icon(Icons.search),
+                Icon(Icons.search),
               ],
             ),
           )

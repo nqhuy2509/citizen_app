@@ -18,18 +18,18 @@ class SettingList extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {},
-                child: ListTile(
-                  leading: const Icon(Icons.person),
-                  title: const Text('Thông tin cá nhân'),
-                  trailing: const Icon(Icons.arrow_forward_ios),
+                child: const ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text('Thông tin cá nhân'),
+                  trailing: Icon(Icons.arrow_forward_ios),
                 ),
               ),
               InkWell(
                 onTap: () {},
-                child: ListTile(
-                  leading: const Icon(Icons.settings),
-                  title: const Text('Cài đặt'),
-                  trailing: const Icon(Icons.arrow_forward_ios),
+                child: const ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text('Cài đặt'),
+                  trailing: Icon(Icons.arrow_forward_ios),
                 ),
               ),
               InkWell(
@@ -37,10 +37,10 @@ class SettingList extends StatelessWidget {
                   context.read<ProfileBloc>().add(LogoutUser());
                   Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
                 },
-                child: ListTile(
-                  leading: const Icon(Icons.logout),
-                  title: const Text('Đăng xuất'),
-                  trailing: const Icon(Icons.arrow_forward_ios),
+                child: const ListTile(
+                  leading: Icon(Icons.logout),
+                  title: Text('Đăng xuất'),
+                  trailing: Icon(Icons.arrow_forward_ios),
                 ),
               ),
             ],

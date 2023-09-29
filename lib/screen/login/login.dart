@@ -36,7 +36,7 @@ class Login extends StatelessWidget {
             final error = state.submissionStatus as SubmissionFailure;
             final errorString = error.exception.toString();
             String errorMessage;
-            if (errorString == ErrorMessage.invalidCredential.toString()) {
+            if (errorString.contains(ErrorMessage.invalidCredential.toString())) {
               errorMessage = AppLocalizations.of(context)!.invalidCredentials;
             } else {
               errorMessage = AppLocalizations.of(context)!.somethingWentWrong;

@@ -21,14 +21,14 @@ class ProfileAvatar extends StatelessWidget {
               ],
             ),
           ),
-          child: Center(
+          child: const Center(
             child: Column(
               children: [
                 CircleAvatar(
                   radius: 35,
                   backgroundImage: AssetImage('assets/icons/ci-point-icon.png'),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 Text("John Doe", style: TextStyle(color: Colors.white, fontSize: 20)),
               ],
             ),

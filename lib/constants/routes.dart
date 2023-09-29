@@ -1,3 +1,4 @@
+import 'package:citizen_app/screen/verification/verification.dart';
 import 'package:citizen_app/screen/register/register.dart';
 import 'package:citizen_app/screen/home/home.dart';
 import 'package:citizen_app/screen/login/login.dart';
@@ -13,4 +14,5 @@ final Map<String, WidgetBuilder> routes = {
   Home.routeName: (context) => const Home(),
   Splash.routeName: (context) => const Splash(),
   Profile.routeName: (context) => Profile(),
+  Verification.routeName: (context) => const Verification(),
 };

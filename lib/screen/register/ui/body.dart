@@ -1,5 +1,4 @@
 import 'package:citizen_app/screen/register/ui/register_form.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -9,16 +8,11 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-      },
+    return Center(
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
             children: [
               Text(
                 AppLocalizations.of(context)!.register,

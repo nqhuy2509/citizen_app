@@ -4,21 +4,28 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class Verification extends StatefulWidget {
-  const Verification({super.key, required this.email});
+  const Verification({super.key});
 
   static String routeName = '/verification';
 
-  final String email;
 
   @override
   State<Verification> createState() => _VerificationState();
 }
 
 class _VerificationState extends State<Verification> {
-  TextEditingController _otpController = TextEditingController();
+  final TextEditingController _otpController = TextEditingController();
+  late String email;
 
   @override
   Widget build(BuildContext context) {
+
+    final Map<String, dynamic>? args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>?;
+
+    if(args != null && args['email'] != null) {
+      email = args['email'];
+    }
+
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -39,7 +46,7 @@ class _VerificationState extends State<Verification> {
                 text: AppLocalizations.of(context)!.verificationEmailMessage1,
                 children: [
                   TextSpan(
-                      text: widget.email,
+                      text: email,
                       style: const TextStyle(fontWeight: FontWeight.bold)),
                   TextSpan(
                       text: AppLocalizations.of(context)!

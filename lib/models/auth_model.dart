@@ -4,20 +4,23 @@
 
 import 'dart:convert';
 
+import 'package:citizen_app/models/api_response_model.dart';
+
 AuthModel authModelFromJson(String str) => AuthModel.fromJson(json.decode(str));
 
 String authModelToJson(AuthModel data) => json.encode(data.toJson());
 
-class AuthModel {
-  final int statusCode;
-  final String message;
-  final Data data;
+class AuthModel extends ApiResponse<Data> {
 
   AuthModel({
-    required this.statusCode,
-    required this.message,
-    required this.data,
-  });
+    required int statusCode,
+    required String message,
+    required Data data,
+  }) : super(
+    statusCode: statusCode,
+    message: message,
+    data: data,
+  );
 
   factory AuthModel.fromJson(Map<String, dynamic> json) => AuthModel(
     statusCode: json["statusCode"],

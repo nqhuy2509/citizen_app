@@ -29,21 +29,33 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailAlreadyExists":
+            MessageLookupByLibrary.simpleMessage("Email already exists"),
         "emailRequired": MessageLookupByLibrary.simpleMessage(
             "Please enter your email address"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "invalidConfirmPassword": MessageLookupByLibrary.simpleMessage(
+            "Password and Confirm Password must be the same"),
         "invalidCredentials": MessageLookupByLibrary.simpleMessage(
             "Email or password is incorrect"),
         "invalidEmail": MessageLookupByLibrary.simpleMessage(
             "Please enter a valid email address"),
+        "invalidNationalId": MessageLookupByLibrary.simpleMessage(
+            "Please enter a valid Citizen ID/Passport"),
         "invalidPassword": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 8 characters long"),
         "letsStart": MessageLookupByLibrary.simpleMessage("Let\'s started!"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "nationalId":
             MessageLookupByLibrary.simpleMessage("Citizen ID/Passport"),
+        "nationalIdAlreadyExists": MessageLookupByLibrary.simpleMessage(
+            "Citizen ID/Passport already exists"),
+        "nationalIdNotFound": MessageLookupByLibrary.simpleMessage(
+            "Citizen ID/Passport not found"),
+        "nationalIdRequired": MessageLookupByLibrary.simpleMessage(
+            "Please enter your Citizen ID/Passport"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),

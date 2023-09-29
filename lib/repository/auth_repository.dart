@@ -12,4 +12,16 @@ class AuthRepository {
     );
     return AuthModel.fromJson(response);
   }
+
+  Future<dynamic> register (String email, String password, String nationalId) async {
+    final response = await RequestApi().post(
+      '/auth/register',
+      data: {
+        'email': email,
+        'password': password,
+        'citizenId': nationalId,
+      },
+    );
+    return response;
+  }
 }

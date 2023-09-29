@@ -299,6 +299,66 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Vui lòng nhập số CMND/CCCD/Hộ chiếu`
+  String get nationalIdRequired {
+    return Intl.message(
+      'Vui lòng nhập số CMND/CCCD/Hộ chiếu',
+      name: 'nationalIdRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Số CMND/CCCD/Hộ chiếu không hợp lệ`
+  String get invalidNationalId {
+    return Intl.message(
+      'Số CMND/CCCD/Hộ chiếu không hợp lệ',
+      name: 'invalidNationalId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mật khẩu xác nhận không khớp`
+  String get invalidConfirmPassword {
+    return Intl.message(
+      'Mật khẩu xác nhận không khớp',
+      name: 'invalidConfirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email đã tồn tại`
+  String get emailAlreadyExists {
+    return Intl.message(
+      'Email đã tồn tại',
+      name: 'emailAlreadyExists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Số CMND/CCCD/Hộ chiếu đã được đăng kí`
+  String get nationalIdAlreadyExists {
+    return Intl.message(
+      'Số CMND/CCCD/Hộ chiếu đã được đăng kí',
+      name: 'nationalIdAlreadyExists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Không tìm thấy số CMND/CCCD/Hộ chiếu trong dữ liệu`
+  String get nationalIdNotFound {
+    return Intl.message(
+      'Không tìm thấy số CMND/CCCD/Hộ chiếu trong dữ liệu',
+      name: 'nationalIdNotFound',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

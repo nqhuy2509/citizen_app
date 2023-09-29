@@ -12,14 +12,15 @@ class RegisterState {
   final String confirmPassword;
   bool get isValidConfirmPassword => confirmPassword == password;
 
-  final String citizenId;
+  final String nationalId;
+  bool get isValidNationalId => nationalId.length > 6;
 
   final SubmissionStatus submissionStatus;
 
   RegisterState({
     this.email = '',
     this.password = '',
-    this.citizenId = '',
+    this.nationalId = '',
     this.confirmPassword = '',
     this.submissionStatus = const SubmissionInitial(),
   });
@@ -27,14 +28,14 @@ class RegisterState {
   RegisterState copyWith({
     String? email,
     String? password,
-    String? citizenId,
+    String? nationalId,
     String? confirmPassword,
     SubmissionStatus? submissionStatus,
   }) {
     return RegisterState(
       email: email ?? this.email,
       password: password ?? this.password,
-      citizenId: citizenId ?? this.citizenId,
+      nationalId: nationalId ?? this.nationalId,
       confirmPassword: confirmPassword ?? this.confirmPassword,
       submissionStatus: submissionStatus ?? this.submissionStatus,
     );
