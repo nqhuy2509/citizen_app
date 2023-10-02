@@ -1,5 +1,7 @@
+import 'package:citizen_app/constants/colors.dart';
 import 'package:citizen_app/provider/language_provider.dart';
 import 'package:citizen_app/screen/login/login.dart';
+import 'package:citizen_app/screen/register/register.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
@@ -50,25 +52,55 @@ class _WelcomeState extends State<Welcome> {
                 fontSize: 16,
               ),
             ),
-            const SizedBox(height: 30),
-            TextButton.icon(
+            const SizedBox(height: 60),
+            ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, Login.routeName);
               },
-              icon: const Icon(Icons.arrow_right_alt),
-              label: Text(
-                AppLocalizations.of(context)!.letsStart,
-                style: const TextStyle(fontSize: 16),
-              ),
-              style: TextButton.styleFrom(
+              style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor,
                 foregroundColor: Colors.white,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(15),
                 ),
               ),
+              child: Text(AppLocalizations.of(context)!.login),
+            ),
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                const Expanded(child: Divider(
+                  thickness: 2,
+                )),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    AppLocalizations.of(context)!.or,
+                    style: const TextStyle(
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+                const Expanded(child: Divider(
+                  thickness: 2,
+                )),
+              ],
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Register.routeName);
+              },
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: secondaryColor,
+                minimumSize: const Size(double.infinity, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+              child: Text(AppLocalizations.of(context)!.register),
             ),
             const SizedBox(height: 20),
             Row(
@@ -89,22 +121,6 @@ class _WelcomeState extends State<Welcome> {
                 ),
               ],
             ),
-
-            // I want to a dropdown select language here
-            // DropdownButton(
-            //   value: languageProvider.locale.languageCode,
-            //   items: const [
-            //     DropdownMenuItem(child: Text('English'), value: 'en'),
-            //     DropdownMenuItem(child: Text('Tiếng Việt'), value: 'vi'),
-            //   ],
-            //   onChanged: (value) {
-            //     languageProvider.setLocale(Locale(value!));
-            //   },
-            //   underline: Container(
-            //     height: 2,
-            //     color: Theme.of(context).primaryColor,
-            //   ),
-            // ),
             const Spacer(),
             Text(
               'Version $_version',

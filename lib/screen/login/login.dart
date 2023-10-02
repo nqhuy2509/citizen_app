@@ -7,11 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class Login extends StatelessWidget {
-  Login({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   static String routeName = '/login';
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   final LoginBloc _loginBloc = LoginBloc(authRepository: AuthRepository());
 
   void _showSnackBarMessage(BuildContext context, message) {
@@ -22,6 +27,12 @@ class Login extends StatelessWidget {
         duration: const Duration(seconds: 3),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _loginBloc.close();
+    super.dispose();
   }
 
   @override

@@ -1,8 +1,8 @@
 
+import 'package:citizen_app/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 
-const Color primaryColor = Color(0xFF00BCD4);
 
 
 ThemeData themeData = ThemeData(

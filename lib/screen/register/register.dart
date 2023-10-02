@@ -8,13 +8,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class Register extends StatelessWidget {
-  Register({super.key});
+class Register extends StatefulWidget {
+  const Register({super.key});
 
   static String routeName = '/register';
 
+  @override
+  State<Register> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
   final RegisterBloc _registerBloc =
       RegisterBloc(authRepository: AuthRepository());
+
+  @override
+  void dispose() {
+    super.dispose();
+    _registerBloc.close();
+  }
 
   @override
   Widget build(BuildContext context) {

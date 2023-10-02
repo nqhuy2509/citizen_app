@@ -36,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "invalidCode":
+            MessageLookupByLibrary.simpleMessage("Mã xác thực không hợp lệ"),
         "invalidConfirmPassword": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu xác nhận không khớp"),
         "invalidCredentials": MessageLookupByLibrary.simpleMessage(
@@ -46,7 +48,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Số CMND/CCCD/Hộ chiếu không hợp lệ"),
         "invalidPassword": MessageLookupByLibrary.simpleMessage(
             "Vui lòng nhập ít nhất 6 ksý tự"),
-        "letsStart": MessageLookupByLibrary.simpleMessage("Bắt đầu!"),
         "login": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
         "nationalId":
             MessageLookupByLibrary.simpleMessage("Số CMND/CCCD/Hộ chiếu"),
@@ -57,18 +58,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "nationalIdRequired": MessageLookupByLibrary.simpleMessage(
             "Vui lòng nhập số CMND/CCCD/Hộ chiếu"),
         "notification": MessageLookupByLibrary.simpleMessage("Thông báo"),
+        "or": MessageLookupByLibrary.simpleMessage("Hoặc"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
         "profile": MessageLookupByLibrary.simpleMessage("Tài khoản"),
         "recept": MessageLookupByLibrary.simpleMessage("Hóa đơn"),
         "register": MessageLookupByLibrary.simpleMessage("Đăng ký"),
+        "resend": MessageLookupByLibrary.simpleMessage("Gửi lại"),
+        "resendCodeIn": MessageLookupByLibrary.simpleMessage("Gửi lại mã sau"),
         "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Có lỗi xảy ra. Vui lòng thử lại sau"),
         "subWelcome": MessageLookupByLibrary.simpleMessage(
             "Cùng nhau xây dựng một thế giới tốt đẹp hơn"),
         "verificationEmailMessage1":
-            MessageLookupByLibrary.simpleMessage("Email đã được gửi đến"),
+            MessageLookupByLibrary.simpleMessage("Email đã được gửi đến "),
         "verificationEmailMessage2": MessageLookupByLibrary.simpleMessage(
-            ". Vui lòng kiểm tra và xác thực email để tiếp tục đăng ký tài khoản"),
+            ". Vui lòng kiểm tra và xác thực email để tiếp tục đăng ký tài khoản."),
         "verify": MessageLookupByLibrary.simpleMessage("Xác thực"),
         "verifyEmail": MessageLookupByLibrary.simpleMessage("Xác thưc Email"),
         "welcome":

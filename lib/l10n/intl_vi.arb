@@ -2,7 +2,7 @@
 	"@@locale": "vi",
 	"welcome": "Chào bạn đến với CitiZen!",
 	"subWelcome": "Cùng nhau xây dựng một thế giới tốt đẹp hơn",
-	"letsStart": "Bắt đầu!",
+	"or": "Hoặc",
 	"login": "Đăng nhập",
 	"email": "Email",
 	"password": "Mật khẩu",
@@ -15,8 +15,8 @@
 	"nationalId": "Số CMND/CCCD/Hộ chiếu",
 	"confirmPassword": "Xác nhận mật khẩu",
 	"invalidPassword": "Vui lòng nhập ít nhất 6 ksý tự",
-	"verificationEmailMessage1": "Email đã được gửi đến",
-	"verificationEmailMessage2": ". Vui lòng kiểm tra và xác thực email để tiếp tục đăng ký tài khoản",
+	"verificationEmailMessage1": "Email đã được gửi đến ",
+	"verificationEmailMessage2": ". Vui lòng kiểm tra và xác thực email để tiếp tục đăng ký tài khoản.",
 	"verify": "Xác thực",
 	"home": "Trang chủ",
 	"recept": "Hóa đơn",
@@ -30,5 +30,8 @@
 	"invalidConfirmPassword": "Mật khẩu xác nhận không khớp",
 	"emailAlreadyExists": "Email đã tồn tại",
 	"nationalIdAlreadyExists": "Số CMND/CCCD/Hộ chiếu đã được đăng kí",
-	"nationalIdNotFound": "Không tìm thấy số CMND/CCCD/Hộ chiếu trong dữ liệu"
+	"nationalIdNotFound": "Không tìm thấy số CMND/CCCD/Hộ chiếu trong dữ liệu",
+	"resendCodeIn": "Gửi lại mã sau",
+	"resend": "Gửi lại",
+	"invalidCode": "Mã xác thực không hợp lệ"
 }

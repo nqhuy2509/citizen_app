@@ -12,7 +12,6 @@ class EmailEditField extends StatelessWidget {
     return BlocBuilder<LoginBloc, LoginState>(
       bloc: BlocProvider.of<LoginBloc>(context),
       builder: (context, state) => TextFormField(
-        autofocus: true,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
           prefixIcon: const Icon(Icons.email),

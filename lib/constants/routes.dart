@@ -14,5 +14,5 @@ final Map<String, WidgetBuilder> routes = {
   Home.routeName: (context) => const Home(),
   Splash.routeName: (context) => const Splash(),
   Profile.routeName: (context) => Profile(),
-  Verification.routeName: (context) => const Verification(),
+  Verification.routeName: (context) => Verification(),
 };

@@ -3,16 +3,22 @@ part of 'verification_bloc.dart';
 
 class VerificationState{
   final String code;
-  bool get isValidCode => code.length == 6;
+  bool get isValidCode => code.length == 6 && int.tryParse(code) != null;
+
+  final String email;
 
   final SubmissionStatus submissionStatus;
 
-  VerificationState({this.code = '', this.submissionStatus = const SubmissionInitial()});
+  final SubmissionStatus resendCodeStatus;
 
-  VerificationState copyWith({String? code, SubmissionStatus? submissionStatus}){
+  VerificationState({this.code = '',this.email = '', this.submissionStatus = const SubmissionInitial(), this.resendCodeStatus = const SubmissionInitial()});
+
+  VerificationState copyWith({String? code, String? email, SubmissionStatus? submissionStatus, SubmissionStatus? resendCodeStatus}){
     return VerificationState(
       code: code ?? this.code,
-      submissionStatus: submissionStatus ?? this.submissionStatus
+      email: email ?? this.email,
+      submissionStatus: submissionStatus ?? this.submissionStatus,
+      resendCodeStatus: resendCodeStatus ?? this.resendCodeStatus
     );
   }
 }

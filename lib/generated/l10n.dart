@@ -70,11 +70,11 @@ class AppLocalizations {
     );
   }
 
-  /// `Bắt đầu!`
-  String get letsStart {
+  /// `Hoặc`
+  String get or {
     return Intl.message(
-      'Bắt đầu!',
-      name: 'letsStart',
+      'Hoặc',
+      name: 'or',
       desc: '',
       args: [],
     );
@@ -200,20 +200,20 @@ class AppLocalizations {
     );
   }
 
-  /// `Email đã được gửi đến`
+  /// `Email đã được gửi đến `
   String get verificationEmailMessage1 {
     return Intl.message(
-      'Email đã được gửi đến',
+      'Email đã được gửi đến ',
       name: 'verificationEmailMessage1',
       desc: '',
       args: [],
     );
   }
 
-  /// `. Vui lòng kiểm tra và xác thực email để tiếp tục đăng ký tài khoản`
+  /// `. Vui lòng kiểm tra và xác thực email để tiếp tục đăng ký tài khoản.`
   String get verificationEmailMessage2 {
     return Intl.message(
-      '. Vui lòng kiểm tra và xác thực email để tiếp tục đăng ký tài khoản',
+      '. Vui lòng kiểm tra và xác thực email để tiếp tục đăng ký tài khoản.',
       name: 'verificationEmailMessage2',
       desc: '',
       args: [],
@@ -355,6 +355,36 @@ class AppLocalizations {
     return Intl.message(
       'Không tìm thấy số CMND/CCCD/Hộ chiếu trong dữ liệu',
       name: 'nationalIdNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gửi lại mã sau`
+  String get resendCodeIn {
+    return Intl.message(
+      'Gửi lại mã sau',
+      name: 'resendCodeIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gửi lại`
+  String get resend {
+    return Intl.message(
+      'Gửi lại',
+      name: 'resend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mã xác thực không hợp lệ`
+  String get invalidCode {
+    return Intl.message(
+      'Mã xác thực không hợp lệ',
+      name: 'invalidCode',
       desc: '',
       args: [],
     );

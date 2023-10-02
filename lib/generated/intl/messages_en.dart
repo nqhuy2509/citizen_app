@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "invalidCode": MessageLookupByLibrary.simpleMessage("Invalid code"),
         "invalidConfirmPassword": MessageLookupByLibrary.simpleMessage(
             "Password and Confirm Password must be the same"),
         "invalidCredentials": MessageLookupByLibrary.simpleMessage(
@@ -46,7 +47,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please enter a valid Citizen ID/Passport"),
         "invalidPassword": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 8 characters long"),
-        "letsStart": MessageLookupByLibrary.simpleMessage("Let\'s started!"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "nationalId":
             MessageLookupByLibrary.simpleMessage("Citizen ID/Passport"),
@@ -57,15 +57,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "nationalIdRequired": MessageLookupByLibrary.simpleMessage(
             "Please enter your Citizen ID/Passport"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
+        "or": MessageLookupByLibrary.simpleMessage("Or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "resend": MessageLookupByLibrary.simpleMessage("Resend"),
+        "resendCodeIn": MessageLookupByLibrary.simpleMessage("Resend code in"),
         "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Something went wrong. Please try again later"),
         "subWelcome": MessageLookupByLibrary.simpleMessage(
             "Creating a better world together"),
         "verificationEmailMessage1":
-            MessageLookupByLibrary.simpleMessage("An email has been sent to"),
+            MessageLookupByLibrary.simpleMessage("An email has been sent to "),
         "verificationEmailMessage2": MessageLookupByLibrary.simpleMessage(
             ". Please check and verify your email to continue registering for an account"),
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),

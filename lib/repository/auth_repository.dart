@@ -24,4 +24,25 @@ class AuthRepository {
     );
     return response;
   }
+
+  Future<dynamic> resendVerificationCode(String email) async {
+    final response = await RequestApi().post(
+      '/auth/resend',
+      data: {
+        'email': email,
+      },
+    );
+    return response;
+  }
+
+  Future<dynamic> verifyCode(String email, String code) async {
+    final response = await RequestApi().post(
+      '/auth/verify',
+      data: {
+        'email': email,
+        'code': code,
+      },
+    );
+    return response;
+  }
 }

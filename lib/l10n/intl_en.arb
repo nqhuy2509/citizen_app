@@ -2,7 +2,7 @@
 	"@@locale": "en",
 	"welcome": "Welcome to CitiZen!",
 	"subWelcome": "Creating a better world together",
-	"letsStart": "Let's started!",
+	"or": "Or",
 	"login": "Login",
 	"email": "Email",
 	"password": "Password",
@@ -15,7 +15,7 @@
 	"nationalId": "Citizen ID/Passport",
 	"confirmPassword": "Confirm Password",
 	"invalidPassword": "Password must be at least 8 characters long",
-	"verificationEmailMessage1": "An email has been sent to",
+	"verificationEmailMessage1": "An email has been sent to ",
 	"verificationEmailMessage2": ". Please check and verify your email to continue registering for an account",
 	"verify": "Verify",
 	"home": "Home",
@@ -30,5 +30,9 @@
 	"invalidConfirmPassword": "Password and Confirm Password must be the same",
 	"emailAlreadyExists": "Email already exists",
 	"nationalIdAlreadyExists": "Citizen ID/Passport already exists",
-	"nationalIdNotFound": "Citizen ID/Passport not found"
+	"nationalIdNotFound": "Citizen ID/Passport not found",
+	"resendCodeIn": "Resend code in",
+	"resend": "Resend",
+	"invalidCode": "Invalid code"
+
 }
